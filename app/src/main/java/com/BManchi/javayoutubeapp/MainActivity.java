@@ -22,6 +22,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
+        Intent intent = null;
 
+        switch(view.getId()) {
+            case R.id.btnPlaySingle:
+                intent = new Intent(this, YoutubeActivity.class);
+                break;
+
+            case R.id.btnStandalone:
+                intent = new Intent(this, StandaloneActivity.class);
+                break;
+
+            default:
+        }
+
+        if(intent != null) {
+            startActivity(intent);
+        }
     }
 }
